@@ -2,34 +2,38 @@ version: '3'
 services:
   feed_fetcher:
     build:
-      context: ./backend-golang
+      context: ./feed_fetcher
       dockerfile: Dockerfile
-    networks:
-      - curio-net
     volumes:
-      - backend-golang-data:/app/data
+      - feed_fetcher:/usr/src/app
+    networks:
+      curio-net:
+        ipv4_address: 192.168.200.101
 
   feed_parser:
     build:
-      context: ./backend-rust
+      context: ./feed_parser
       dockerfile: Dockerfile
-    networks:
-      - curio-net
     volumes:
-      - backend-rust-data:/app/data
+      - feed_parser:/usr/src/app
+    networks:
+      curio-net:
+        ipv4_address: 192.168.200.201
 
-  curio-router:
+  curio_router:
     build:
-      context: ./nginx-router
+      context: ./curio_router
       dockerfile: Dockerfile
+    volumes:
+      - ./curio_router/nginx.conf:/etc/nginx/nginx.conf
     networks:
       curio-net:
         ipv4_address: 192.168.200.10
 
-  feed_datastore:
+  feed_data:
     image: postgres
     volumes:
-      - postgres-data:/var/lib/postgresql/data
+      - feed_data:/var/lib/postgresql/data
     networks:
       curio-net:
         ipv4_address: 192.168.200.90
