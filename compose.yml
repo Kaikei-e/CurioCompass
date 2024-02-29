@@ -5,7 +5,7 @@ services:
       context: ./feed_fetcher
       dockerfile: Dockerfile
     volumes:
-      - feed_fetcher:/usr/src/app
+      - ./feed_fetcher:/usr/src/app
     environment:
       timezone: 'Asia/Tokyo'
     depends_on:
@@ -20,7 +20,7 @@ services:
       context: ./feed_parser
       dockerfile: Dockerfile
     volumes:
-      - feed_parser:/usr/src/app
+      - ./feed_parser:/usr/src/app
     environment:
       timezone: 'Asia/Tokyo'
     depends_on:
@@ -39,7 +39,7 @@ services:
       - '80:80'
       - '443:443'
     volumes:
-      - ./curio_router/nginx.conf:/etc/nginx/nginx.conf
+      - ./curio_router/config:/etc/nginx/nginx.conf
     networks:
       curio-net:
         ipv4_address: 192.168.200.10
@@ -47,7 +47,7 @@ services:
   feed_data:
     image: postgres
     volumes:
-      - feed_data:/var/lib/postgresql/data
+      - ./feed_data/data:/var/lib/postgresql/data
     environment:
       timezone: 'Asia/Tokyo'
       POSTGRES_USER: ${POSTGRES_USER}
