@@ -1,46 +1,42 @@
 version: '3'
 services:
-  backend-golang:
+  feed_fetcher:
     build:
       context: ./backend-golang
       dockerfile: Dockerfile
     networks:
       - curio-net
-    # Add any additional configuration for the Golang backend service
     volumes:
       - backend-golang-data:/app/data
 
-  backend-rust:
+  feed_parser:
     build:
       context: ./backend-rust
       dockerfile: Dockerfile
     networks:
       - curio-net
-    # Add any additional configuration for the Rust backend service
     volumes:
       - backend-rust-data:/app/data
 
-  nginx-router:
+  curio-router:
     build:
       context: ./nginx-router
       dockerfile: Dockerfile
     networks:
-      - curio-net
-    # Add any additional configuration for the Nginx router service
+      curio-net:
+        ipv4_address: 192.168.200.10
 
-  postgres-db:
+  feed_datastore:
     image: postgres
-    networks:
-      - curio-net
-    # Add any additional configuration for the PostgreSQL service
     volumes:
       - postgres-data:/var/lib/postgresql/data
+    networks:
+      curio-net:
+        ipv4_address: 192.168.200.90
 
 networks:
   curio-net:
-    driver: bridge
-
-volumes:
-  backend-golang-data:
-  backend-rust-data:
-  postgres-data:
+    ipam:
+      driver: default
+      config:
+        - subnet: 192.168.200.0/24
