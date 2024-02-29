@@ -5,4 +5,4 @@ WORKDIR /usr/src/app
 
 EXPOSE 9000
 
-CMD [ "go" , "run" , "main.go"]
+# CMD [ "go" , "run" , "main.go"]

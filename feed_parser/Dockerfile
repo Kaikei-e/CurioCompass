@@ -4,3 +4,4 @@ ADD ./feedParser /usr/src/app
 WORKDIR /usr/src/app
 
 EXPOSE 9000
+
