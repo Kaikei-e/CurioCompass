@@ -1,0 +1,46 @@
+version: '3'
+services:
+  backend-golang:
+    build:
+      context: ./backend-golang
+      dockerfile: Dockerfile
+    networks:
+      - curio-net
+    # Add any additional configuration for the Golang backend service
+    volumes:
+      - backend-golang-data:/app/data
+
+  backend-rust:
+    build:
+      context: ./backend-rust
+      dockerfile: Dockerfile
+    networks:
+      - curio-net
+    # Add any additional configuration for the Rust backend service
+    volumes:
+      - backend-rust-data:/app/data
+
+  nginx-router:
+    build:
+      context: ./nginx-router
+      dockerfile: Dockerfile
+    networks:
+      - curio-net
+    # Add any additional configuration for the Nginx router service
+
+  postgres-db:
+    image: postgres
+    networks:
+      - curio-net
+    # Add any additional configuration for the PostgreSQL service
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+networks:
+  curio-net:
+    driver: bridge
+
+volumes:
+  backend-golang-data:
+  backend-rust-data:
+  postgres-data:
