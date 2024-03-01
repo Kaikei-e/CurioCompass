@@ -1,6 +1,7 @@
 package rest
 
 import (
+	v1 "feedFetcher/rest/v1"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 )
@@ -18,6 +19,11 @@ func InitServer() {
 	)
 
 	e.GET("/system/health", healthCheck)
+	v1Group := e.Group("/api/v1")
+	v1Group.Use()
+	{
+		v1Group.GET("/registeredLink", v1.GetRegisteredLink)
+	}
 
 	e.Logger.Fatal(e.Start(":9000"))
 }
