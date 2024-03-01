@@ -1,5 +1,7 @@
 package main
 
+import "feedFetcher/logger"
+
 func main() {
-	println("Hello, World!")
+	logger.SetUpLogger()
 }
