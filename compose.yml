@@ -8,6 +8,7 @@ services:
       - ./feed_fetcher:/usr/src/app
     environment:
       timezone: 'Asia/Tokyo'
+    tty: true
     depends_on:
       feed_data:
         condition: service_healthy
@@ -23,6 +24,7 @@ services:
       - ./feed_parser:/usr/src/app
     environment:
       timezone: 'Asia/Tokyo'
+    tty: true
     depends_on:
       feed_data:
         condition: service_healthy
