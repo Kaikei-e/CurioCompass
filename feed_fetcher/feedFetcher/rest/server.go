@@ -17,4 +17,11 @@ func InitServer() {
 		),
 	)
 
+	e.GET("/system/health", healthCheck)
+
+	e.Logger.Fatal(e.Start(":9000"))
+}
+
+func healthCheck(c echo.Context) error {
+	return c.String(200, "OK")
 }

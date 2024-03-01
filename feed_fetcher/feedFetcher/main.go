@@ -1,7 +1,12 @@
 package main
 
-import "feedFetcher/logger"
+import (
+	"feedFetcher/logger"
+	"feedFetcher/rest"
+)
 
 func main() {
 	logger.SetUpLogger()
+
+	rest.InitServer()
 }
