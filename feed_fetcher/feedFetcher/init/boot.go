@@ -16,12 +16,12 @@ func InitDBConnection() *bun.DB {
 		panic(err)
 	}
 
-	POSTGRES_USER := os.Getenv("POSTGRES_USER")
-	POSTGRES_PASSWORD := os.Getenv("POSTGRES_PASSWORD")
-	POSTGRES_DB := os.Getenv("POSTGRES_DB")
-	DB_IP := os.Getenv("DB_IP")
+	PostgresUser := os.Getenv("POSTGRES_USER")
+	PostgresPassword := os.Getenv("POSTGRES_PASSWORD")
+	PostgresDb := os.Getenv("POSTGRES_DB")
+	DbIp := os.Getenv("DB_IP")
 
-	dsn := "postgres://" + POSTGRES_USER + ":" + POSTGRES_PASSWORD + "@" + DB_IP + "/" + POSTGRES_DB + "?sslmode=disable"
+	dsn := "postgres://" + PostgresUser + ":" + PostgresPassword + "@" + DbIp + "/" + PostgresDb + "?sslmode=disable"
 
 	sqldb := sql.OpenDB(pgdriver.NewConnector(pgdriver.WithDSN(dsn)))
 
