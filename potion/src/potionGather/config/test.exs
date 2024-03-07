@@ -17,7 +17,7 @@ config :potionGather, PotionGather.Repo,
 # you can enable the server option below.
 config :potionGather, PotionGatherWeb.Endpoint,
   http: [ip: {127, 0, 0, 1}, port: 4002],
-  secret_key_base: "8WoSPn6JS1zZqF/E7ATdw+y6Lk7FOba9LmwOxJiNDeBQN9WS9eQQPZdB6CWJxqjH",
+  secret_key_base: "o6nASyfafaeK0GzPZoCAHKCbu/zT0RdJRSYTNjjWqbv612D2V92XVPxmEN8s4efw",
   server: false
 
 # In test we don't send emails.

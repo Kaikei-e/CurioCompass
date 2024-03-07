@@ -23,7 +23,7 @@ config :potionGather, PotionGatherWeb.Endpoint,
   check_origin: false,
   code_reloader: true,
   debug_errors: true,
-  secret_key_base: "p7iEqCGH7yOHet13PnNoRj/nMu56vsuyR97tu/yXIiMkvxv2Q4H6h7vkogfjXYoo",
+  secret_key_base: "JCuOLgiAM8NK4oijW7tFVzqTeCYp/XZtV3CICtv7BBN2GqHpajKrpVGkBYEz0gIG",
   watchers: [
     esbuild: {Esbuild, :install_and_run, [:potionGather, ~w(--sourcemap=inline --watch)]},
     tailwind: {Tailwind, :install_and_run, [:potionGather, ~w(--watch)]}

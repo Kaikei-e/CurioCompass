@@ -20,7 +20,7 @@ config :potionGather, PotionGatherWeb.Endpoint,
     layout: false
   ],
   pubsub_server: PotionGather.PubSub,
-  live_view: [signing_salt: "cDYRZkfv"]
+  live_view: [signing_salt: "xMVcTkUO"]
 
 # Configures the mailer
 #

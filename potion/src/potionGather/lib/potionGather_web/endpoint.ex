@@ -7,7 +7,7 @@ defmodule PotionGatherWeb.Endpoint do
   @session_options [
     store: :cookie,
     key: "_potionGather_key",
-    signing_salt: "W14V+1la",
+    signing_salt: "p3C2ZyJN",
     same_site: "Lax"
   ]
 
