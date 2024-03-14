@@ -7,6 +7,7 @@ import (
 )
 
 func main() {
+
 	logger.SetUpLogger()
 
 	initialize.InitDBConnection()

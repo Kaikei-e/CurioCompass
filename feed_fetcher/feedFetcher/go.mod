@@ -11,6 +11,9 @@ require (
 	github.com/labstack/gommon v0.4.2 // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect
 	github.com/mattn/go-isatty v0.0.20 // indirect
+	github.com/samber/do v1.6.0
+	github.com/samber/do/v2 v2.0.0-beta.3 // indirect
+	github.com/samber/go-type-to-string v1.2.0 // indirect
 	github.com/tmthrgd/go-hex v0.0.0-20190904060850-447a3041c3bc // indirect
 	github.com/uptrace/bun v1.1.17 // indirect
 	github.com/uptrace/bun/dialect/pgdialect v1.1.17 // indirect
