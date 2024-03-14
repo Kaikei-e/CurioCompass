@@ -35,3 +35,5 @@ potionGather-*.tar
 npm-debug.log
 /assets/node_modules/
 
+config/prod.exs
+
