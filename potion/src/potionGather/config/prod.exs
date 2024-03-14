@@ -3,7 +3,7 @@ import Config
 
 config :potionGather, PotionGather.Repo,
   username: "user1",
-  password: "wanDOIHWfoiuhqF(#(Q)@fq828g2)",
+  password: "wanDOIHWfoiuhqF(#(Q)@fq828g2)", # Replace with your password. This is example only.
   hostname: "192.168.200.90",
   database: "feed_data",
   stacktrace: true,
