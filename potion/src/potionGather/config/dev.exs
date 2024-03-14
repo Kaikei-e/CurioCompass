@@ -2,10 +2,10 @@ import Config
 
 # Configure your database
 config :potionGather, PotionGather.Repo,
-  username: "postgres",
-  password: "postgres",
-  hostname: "localhost",
-  database: "potiongather_dev",
+  username: "user1",
+  password: "wanDOIHWfoiuhqF(#(Q)@fq828g2)", # Replace with your password. This is example only.
+  hostname: "192.168.200.90",
+  database: "feed_data",
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
