@@ -4,6 +4,8 @@ go 1.22.0
 
 require github.com/labstack/echo/v4 v4.11.4
 
+require go.uber.org/dig v1.17.1 // indirect
+
 require (
 	github.com/golang-jwt/jwt v3.2.2+incompatible // indirect
 	github.com/jinzhu/inflection v1.0.0 // indirect
